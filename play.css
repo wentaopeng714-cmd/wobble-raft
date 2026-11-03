@@ -1,0 +1,97 @@
+/* Raft-only interface: one resource strip, one task, one current action. */
+body[data-game='raft'] header{height:44px;min-height:44px;flex-basis:44px;padding:0 14px;gap:8px;background:#eef4e9;border:0;width:100%;max-width:none}
+body[data-game='raft'] .brand{font-size:12px;letter-spacing:0;gap:0}
+body[data-game='raft'] .brand-icon,body[data-game='raft'] .brand small{display:none}
+body[data-game='raft'] nav{margin-left:auto}
+body[data-game='raft'] nav button{height:44px;width:44px;border:0;background:transparent;box-shadow:none;font-size:20px}
+body[data-game='raft'] main{display:flex;padding:0;gap:0;min-height:0;flex:1;width:100%;max-width:none}
+body[data-game='raft'] .story{display:none}
+body[data-game='raft'] .app{height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+body[data-game='raft'] .game{height:100%;min-height:0;border:0;border-radius:0;box-shadow:none;flex:1;background:#267f91}
+body[data-game='raft'] .topline{top:13px;right:14px;left:auto;z-index:3}
+body[data-game='raft'] .topline #clock{display:none}
+body[data-game='raft'] .topline #chapter{background:#164a5fbc;color:#e4f8f0;font:700 9px sans-serif;letter-spacing:.2px;padding:9px 10px;border-radius:18px;box-shadow:none}
+body[data-game='raft'] #extra-hud{top:10px;left:14px;right:100px;display:block;pointer-events:none}
+body[data-game='raft'] .supplies{display:flex;align-items:center;gap:12px;width:max-content;max-width:100%;padding:4px 11px 4px 6px;background:#f3f8edeb;border-radius:19px;box-shadow:0 2px 8px #07435812;color:#234c5a}
+body[data-game='raft'] .supplies>div{display:flex;align-items:center;gap:3px;flex-shrink:0}
+body[data-game='raft'] .supplies svg{width:25px;height:25px;display:block}
+body[data-game='raft'] .supplies b{font-size:13px;line-height:1;font-weight:800}
+body[data-game='raft'] .supplies small{display:none}
+body[data-game='raft'] .supplies .cargo-count{display:none}
+body[data-game='raft'].cargo-full .supplies .cargo-count{display:block;font-size:8px;border-left:1px solid #bdd3cb;padding-left:7px}
+body[data-game='raft'].cargo-full .supplies .cargo-count b{font-size:9px;color:#a55731}
+body[data-game='raft'] .sea-status{background:#144a5a9c;color:#d5e9e5;max-width:210px;font-size:8px;border-radius:9px;margin-top:6px;padding:5px 8px;box-shadow:none}
+body[data-game='raft'] .sea-status>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:5px}
+body[data-game='raft'] .sea-status b{font-size:9px;color:#fff3cf}
+body[data-game='raft'] .sea-status #speed,body[data-game='raft'] .sea-status p{display:none}
+body[data-game='raft'] .flood-meter{height:3px;margin-top:4px;background:#79aeae55}
+body[data-game='raft'] .flood-meter i{background:#8ce7e4}
+body[data-game='raft'].raft-practice .sea-status{display:none}
+body[data-game='raft'] .mission{top:92px;left:14px;right:14px;display:block;background:none;box-shadow:none;border:0;border-radius:0;padding:0;pointer-events:none;min-height:0}
+body[data-game='raft'].raft-practice .mission{top:57px}
+body[data-game='raft'] .mission small,body[data-game='raft'] .mission p,body[data-game='raft'] .mission>strong{display:none}
+body[data-game='raft'] .mission b{font-size:12px;font-weight:700;color:#f0fff2;text-shadow:0 1px 4px #164257bd;line-height:1.5;display:block;max-width:92%}
+body[data-game='raft'] .bottom{left:16px;right:16px;bottom:calc(20px + env(safe-area-inset-bottom));max-width:520px;margin:auto;pointer-events:none}
+.guide-cta{pointer-events:auto;margin-bottom:13px}
+.confirm-row{display:flex;align-items:center;gap:6px}
+#guide-action{display:flex;align-items:center;justify-content:space-between;min-height:48px;flex:1;min-width:0;padding:5px 13px 5px 8px;gap:8px;background:#ffda83;color:#43554a;border:1px solid #fff1c2;border-radius:16px;box-shadow:0 3px 0 #986f3b66}
+#guide-action:active{transform:translateY(2px);box-shadow:0 1px 0 #986f3b66}
+#guide-action b{font-size:12px;line-height:1.3;flex:1;text-align:left}
+#guide-action svg{width:29px;height:29px;display:block}
+#guide-action:disabled{background:#d2e8dfde;border-color:#e6f7ec;color:#63877e;box-shadow:none}
+#guide-action.launch{background:#ade8c7;border-color:#dbffe5}
+.cta-arrow{font-size:21px;font-weight:700}
+#change-spot{width:76px;min-height:48px;font-size:9px;font-weight:750;padding:5px;border-radius:14px;background:#dcf3e5;border:1px solid #e5fff0;box-shadow:0 3px 0 #2c696d33}
+.recipe{display:flex;align-items:center;gap:7px;padding:4px 7px 4px 12px;margin-bottom:7px;border-radius:13px;background:#174b5bd6;color:#edf6dc;font-size:9px;min-height:48px}
+.recipe svg{width:24px;height:24px;flex-shrink:0}
+.recipe b{display:none}
+.recipe-arrow{font-size:17px}
+body[data-game='raft'] .recipe #cancel{min-height:44px;min-width:44px;margin-left:auto;padding:5px 9px;border:0;border-radius:10px;background:#ffffff17;color:#e5f6e7;font-size:9px;pointer-events:auto}
+body[data-game='raft'] .build-tray{display:none;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 7px;pointer-events:auto}
+body[data-game='raft'].craft-open .build-tray{display:grid}
+body[data-game='raft'] .build-button{min-height:80px;padding:6px 3px;border:1px solid #eaf5dc;background:#f3f6eaeF;box-shadow:0 3px 0 #214e5e30;border-radius:12px;gap:3px}
+body[data-game='raft'] .build-button>svg{height:30px;width:30px;display:block}
+body[data-game='raft'] .build-button>span{display:flex;flex-direction:column;align-items:center;gap:3px}
+body[data-game='raft'] .build-button b{font-size:10px}
+body[data-game='raft'] .build-button small{font-size:7px;color:#65807a;white-space:normal}
+body[data-game='raft'] .build-button em{display:none}
+body[data-game='raft'] .build-button.unaffordable{background:#c9ded6f0}
+body[data-game='raft'] .build-button.active,body[data-game='raft'] .build-button.recommended{border:2px solid #fff3c9;background:#ffdf95;box-shadow:none}
+.drawer-tools{display:none;pointer-events:auto;gap:7px;margin-bottom:9px}
+body[data-game='raft'].craft-open .drawer-tools{display:flex}
+.drawer-tools button{flex:1;min-height:44px;padding:8px;border:1px solid #e9f6e6;border-radius:11px;background:#d8eee1;color:#345d60;font-size:10px}
+body[data-game='raft'] .raft-tools{display:flex;align-items:center;justify-content:space-between;gap:8px;pointer-events:none}
+body[data-game='raft'].raft-practice .raft-tools{display:none}
+body[data-game='raft'] .joy{width:76px;height:76px;border:1px solid #e4f8e199;background:#d3f1e41f;box-shadow:inset 0 0 0 11px #e2f7e50b;flex-shrink:0}
+body[data-game='raft'] .joy i{width:31px;height:31px;left:21px;top:21px;background:#f2eed1;border:1px solid #f8ffe5;box-shadow:none}
+body[data-game='raft'] .joy small{display:none}
+body[data-game='raft'] .little-tools{display:flex;align-items:center;justify-content:center;max-width:none;width:auto;gap:0;pointer-events:auto}
+body[data-game='raft'] .little-tools p{display:none}
+body[data-game='raft'] #build-menu{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:54px;min-width:60px;padding:5px 8px;background:#eaf3e5ee;border:1px solid #f8ffe7;border-radius:16px;box-shadow:0 3px 0 #204f5d22;font-size:10px;font-weight:800}
+#build-menu svg{width:25px;height:25px;display:block}
+body[data-game='raft'] .raft-tools .action{width:76px;height:76px;border-radius:24px;background:#a3dce0;border:1px solid #e4fff2;box-shadow:0 3px 0 #24565b55;gap:1px;flex-shrink:0}
+body[data-game='raft'] .raft-tools .action>span{font-size:0;line-height:1}
+body[data-game='raft'] .raft-tools .action svg{width:26px;height:26px;display:block}
+body[data-game='raft'] .raft-tools .action b{font-size:11px}
+body[data-game='raft'] .raft-tools .action small{font-size:7px}
+body[data-game='raft'] .raft-tools .action.recommended{border-color:#fff1bb;box-shadow:0 0 0 3px #fff1bb55,0 3px 0 #24565b55}
+body[data-game='raft'] .raft-tools .action:not(.squeeze){background:#ffda83}
+body[data-game='raft'] .scene-target{min-height:44px;min-width:48px;border:1px solid #efffee;border-radius:15px;background:#def1e5df;box-shadow:0 2px 0 #174b5d33;font-size:9px;padding:6px 9px}
+body[data-game='raft'] .scene-target.recommended{background:#ffe5a1;border-color:#fff2c1;box-shadow:0 0 0 3px #ffe6ad33,0 3px 0 #244b5d30}
+body[data-game='raft'] .scene-target.place{background:#b8eecf;border:1px dashed #2e8979}
+body[data-game='raft'] .scene-target:disabled{opacity:.30}
+.target-connector{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.target-connector path{fill:none;stroke:#e5f6dd;stroke-width:1;stroke-dasharray:3 4;opacity:.7}
+body[data-game='raft'] .toast{top:auto;bottom:171px;background:#174b5be8;border:0;border-radius:13px;box-shadow:none;padding:8px 12px;font-size:10px;max-width:86%;width:max-content;transform:translate(-50%,6px)}
+body[data-game='raft'] .toast.show{transform:translate(-50%,0)}
+body[data-game='raft'].raft-practice .toast{bottom:86px}
+body[data-game='raft'].raft-placing .toast{display:none}
+body[data-game='raft'].raft-ended .guide-cta,body[data-game='raft'].raft-ended .build-tray,body[data-game='raft'].raft-ended .drawer-tools{display:none}
+.pause-settings{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:12px;border-top:1px solid #dedcc9;padding-top:13px}
+.pause-settings button{height:44px;min-width:44px;font-weight:750;font-size:13px;border:1px solid #cddcd0;background:#e8f0e1;border-radius:12px}
+.pause-settings a{font-size:10px;color:#70897f;line-height:1.4;max-width:105px;text-align:left}
+@media(min-width:901px){body[data-game='raft'] .game{max-width:none}body[data-game='raft'] .mission{max-width:500px}body[data-game='raft'] .bottom{max-width:430px}body[data-game='raft'] header{height:48px;min-height:48px;flex-basis:48px}body[data-game='raft'] .brand{font-size:13px}}
+@media(max-width:350px){body[data-game='raft'] #extra-hud{left:11px;right:88px}body[data-game='raft'] .supplies{gap:8px;padding:4px 8px 4px 5px}body[data-game='raft'] .supplies svg{width:22px;height:22px}body[data-game='raft'] .supplies b{font-size:12px}body[data-game='raft'] .topline{right:11px}body[data-game='raft'] .topline #chapter{font-size:8px;padding:9px 8px}body[data-game='raft'] .mission{left:12px;right:12px}body[data-game='raft'] .mission b{font-size:11px}body[data-game='raft'] .bottom{left:12px;right:12px}#guide-action b{font-size:11px}#guide-action svg{height:26px;width:26px}body[data-game='raft'] .joy{width:66px;height:66px}body[data-game='raft'] .joy i{left:16px;top:16px}body[data-game='raft'] .raft-tools .action{width:70px;height:70px}body[data-game='raft'] .build-button{min-height:75px}body[data-game='raft'] .build-button small{font-size:6px}.recipe{font-size:8px}}
+@media(max-height:500px) and (orientation:landscape){body[data-game='raft'] .mission{top:49px;left:230px;right:110px}body[data-game='raft'].raft-practice .mission{top:17px;left:230px;right:110px}body[data-game='raft'] .bottom{left:20px;right:20px;bottom:14px;max-width:none}body[data-game='raft'] .guide-cta{position:absolute;bottom:5px;left:100px;right:90px;max-width:350px;margin:auto}body[data-game='raft'].craft-open .guide-cta{bottom:145px}body[data-game='raft'] .build-tray{position:absolute;left:100px;right:90px;bottom:58px;max-width:350px;margin:auto}body[data-game='raft'] .drawer-tools{position:absolute;bottom:5px;left:100px;right:90px;max-width:350px;margin:auto}body[data-game='raft'] .little-tools{position:absolute;right:91px;bottom:0}body[data-game='raft'] .recipe{margin-bottom:6px}body[data-game='raft'] #change-spot{width:65px}body[data-game='raft'] .toast{bottom:80px;max-width:55%}}
+body[data-game='raft'] #help-copy{white-space:pre-line;text-align:left;line-height:1.8;font-size:11px}
+body[data-game='raft'] .pause-settings{margin:4px 0 12px;padding:0;border:0}

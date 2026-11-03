@@ -1,0 +1,9 @@
+{
+  "name": "wobble-raft",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4194 --bind 127.0.0.1"
+  }
+}

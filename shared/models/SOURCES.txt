@@ -1,0 +1,7 @@
+Kenney Pirate Kit and Furniture Kit, by Kenney. License: CC0 1.0.
+Official source: https://kenney.nl/assets/pirate-kit and https://kenney.nl/assets/furniture-kit
+CC0 confirmation: https://kenney.nl/support
+GLB packaging mirror: https://github.com/Hidencod/tge-assets
+The included models are bundled locally; no runtime asset CDN.
+Licence deed: https://creativecommons.org/publicdomain/zero/1.0/
+Three.js and its GLTFLoader/BufferGeometryUtils: MIT, see ../vendor/THREE-LICENSE.txt
